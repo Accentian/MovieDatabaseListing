@@ -2,26 +2,30 @@
  * The following JavaScript below is based from this source: 
  * https://stackoverflow.com/questions/73289933/unable-to-fetch-data-from-tmdb-javascript
  * 
+ * Thank you Chris for helping me with the IF-ELSE statement 
+ * 
  * API access and URL template:
  * https://api.themoviedb.org/3/search/movie?api_key=<api_key>&language=en-US&query=<input>
  * https://api.themoviedb.org/3/search/movie?api_key=0816131913d9d6e087afb9dc6986377e&language=en-US&query=tf2
  * 
- * https://api.themoviedb.org/3/search/movie?api_key=0816131913d9d6e087afb9dc6986377e&language=en-US&query=hurrrrrr
+ * 
  * 
  */
 
 const base_url = 'https://api.themoviedb.org/3/search/movie?';
 const api_key = 'api_key=0816131913d9d6e087afb9dc6986377e';
 let search_url = base_url + api_key + '&language=en-US&query=';
+// let image_base_url = 'https://image.tmdb.org/t/p/w500/';
 
-// search_url is passed into getMovies
+
+// search_url is passed into getMovies and fetches the resource
 function getMovies(my_api) {
     return fetch(my_api, {
         method: 'GET',
-        cache: "no-cache",
+        cache:'no-cache', 
       })
 
-      // Access the JSON containing TMDB API and catches any errors
+      // Access the JSON containing TMDB API and check if fetch was successful
       .then(res => res.json())
       .catch(err => {
         console.log(err.message);
@@ -64,7 +68,7 @@ function getMovies(my_api) {
   let search_button = document.getElementById('search_btn');
   search_button.addEventListener('click', () => {
 
-    // input is the value entered in the search bar in index.html
+    // input is the value entered in the search bar (id=search_input) in index.html
     let input = search_input.value;
 
     // Ensure the field isn't blank

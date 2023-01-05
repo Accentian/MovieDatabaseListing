@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- Credit:
+    https://www.youtube.com/watch?v=YsPqjYGauns 
+    https://stackoverflow.com/questions/73289933/unable-to-fetch-data-from-tmdb-javascript
+-->
+<html>
+    <head>
+    <meta charset = "utf-8">
+        <Title>Movie Database Search</Title>
+        
+        <!-- Using bootstrap for style -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    
+    <body>
+        <!-- Create navigation bar-->
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">Home</a>
+                </div>
+            </nav>
+            
+            <div class="container">
+                <div class="jumbotron">
+                    <h1 class = "text-header">Search for any Movies</h1>
+                </div>
+            </div>
+
+            <!-- Wrapping these Form  these three lines below into a form causes complications -->
+            <input type="text" class="form-control" id="search_input" placeholder="Search Movie">
+            <button id="search_btn">Search</button><br/>
+            <ul id="results"></ul>
+
+        <script src="./main.js"></script>
+    </body>
+</html>

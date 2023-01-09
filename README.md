@@ -11,3 +11,5 @@ The data is from The Movie Database API that can be found using this link: https
 3. `main.js` and uses an API key to access TMDB API within JSON. The JavaScript allows the webpage to search, display movie info, and will notify users if their search comes up empty.
 
 4. `css` folder contains two CSS file. One from bootstrap and `style.css` that enhance the `index.html` listings.
+
+You can check out the repo in GitHub Pages: https://accentian.github.io/MovieDatabaseListing/

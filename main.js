@@ -7,15 +7,11 @@
  * API access and URL template:
  * https://api.themoviedb.org/3/search/movie?api_key=<api_key>&language=en-US&query=<input>
  * https://api.themoviedb.org/3/search/movie?api_key=0816131913d9d6e087afb9dc6986377e&language=en-US&query=tf2
- * 
- * 
- * 
  */
 
 const base_url = 'https://api.themoviedb.org/3/search/movie?';
 const api_key = 'api_key=0816131913d9d6e087afb9dc6986377e';
 let search_url = base_url + api_key + '&language=en-US&query=';
-// let image_base_url = 'https://image.tmdb.org/t/p/w500/';
 
 
 // search_url is passed into getMovies and fetches the resource
@@ -36,14 +32,12 @@ function getMovies(my_api) {
   function listMovies(url) {
     // results is from index.html
     let ul = document.getElementById('results');
-
-    // The line below prevents duplicate listings
     ul.innerHTML = '';
 
+    // If no results are found, notify the user
     if (url.results == 0) {
       let empty_li = document.createElement('li');
       
-      alert('Sorry! We could not find anything! Please try again.');
       empty_li.appendChild(document.createTextNode('Sorry! We could not find anything! Please try again.'));
       ul.appendChild(empty_li);
     }
@@ -54,12 +48,18 @@ function getMovies(my_api) {
         let li = document.createElement('li');
         let sub_li = document.createElement('ul');
 
+        // let image_li = document.createElement('img');
+        // let image_url = image_base_url + result.poster_path;
+
         // The title and overview is from the TMDB API
         li.appendChild(document.createTextNode(result.title));
         sub_li.appendChild(document.createTextNode(result.overview));
 
+        // image_li.appendChild(image_url);
+
         ul.appendChild(li);
-        ul.appendChild(sub_li); 
+        ul.appendChild(sub_li);
+        // ul.appendChild(image_li);
       });
     }
   }
